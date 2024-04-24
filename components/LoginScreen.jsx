@@ -71,10 +71,10 @@ const LoginScreen = ({ navigation }) => {
           };
           console.log("User Info:", userInfo);
           console.log("Token Info:", json.result.token);
-          //await AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
-          //await Keychain.setGenericPassword('userToken', JSON.stringify(json.result.token), {
-          //  service: 'jwt tokens'
-          //});
+          await AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
+          await Keychain.setGenericPassword('userToken', JSON.stringify(json.result.token), {
+            service: 'jwt tokens'
+          });
           // MainScreen으로 이동
           navigation.navigate("MainScreen");
           break;
